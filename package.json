@@ -1,0 +1,19 @@
+{
+  "name": "roja-dove-royale-3d",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5173 --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "^0.170.0",
+    "gsap": "^3.12.5",
+    "canvas-confetti": "^1.9.3"
+  },
+  "devDependencies": {
+    "vite": "^5.4.10"
+  }
+}

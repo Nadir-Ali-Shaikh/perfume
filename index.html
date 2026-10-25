@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROJA DOVE ROYALE | Limited Edition Haute Parfumerie 3D Experience</title>
+  <meta name="description" content="Experience ROJA DOVE ROYALE Limited Edition in an interactive 3D sensory showcase. Handcrafted crystal flacon, 24K gold faceted crown, and rare Extrait de Parfum.">
+  <meta name="keywords" content="Roja Dove, Royale, Haute Parfumerie, 3D Luxury Perfume, Limited Edition, Extrait de Parfum">
+  
+  <!-- Favicon / Visual Icon -->
+  <link rel="icon" type="image/webp" href="./RDP-Royale_Social1_4-5.webp">
+
+  <!-- Preconnect Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Custom Luxury Golden Cursor -->
+  <div class="custom-cursor" id="custom-cursor"></div>
+  <div class="custom-cursor-dot" id="custom-cursor-dot"></div>
+
+  <!-- Background Glacial Sapphire Caustic Atmosphere -->
+  <div class="sapphire-ambient-light" id="ambient-light"></div>
+
+  <!-- NAVIGATION -->
+  <header class="luxury-nav" id="main-nav">
+    <a href="#" class="brand-crest" aria-label="Roja Dove Perfumery Home">
+      <span class="brand-title">ROJA DOVE</span>
+      <span class="brand-subtitle">PERFUMERY • LONDON</span>
+    </a>
+
+    <nav aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li><a href="#hero-stage" class="nav-link">The Flacon</a></li>
+        <li><a href="#olfactory-section" class="nav-link">Olfactory Pyramid</a></li>
+        <li><a href="#craftsmanship" class="nav-link">Craftsmanship</a></li>
+        <li><a href="#engraving-studio" class="nav-link">Bespoke Engraving</a></li>
+        <li><a href="#reviews-section" class="nav-link">Collector Notes</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <!-- Web Audio Synth Toggle -->
+      <button class="audio-toggle-btn" id="audio-toggle" aria-label="Toggle luxury audio experience">
+        <div class="sound-bars">
+          <div class="sound-bar"></div>
+          <div class="sound-bar"></div>
+          <div class="sound-bar"></div>
+        </div>
+        <span id="audio-label">ATMOSPHERE: MUTED</span>
+      </button>
+
+      <button class="btn-vip-concierge" id="nav-reserve-btn">
+        VIP RESERVE
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ====================================================================
+         HERO 3D VIEWPORT STAGE
+         ==================================================================== -->
+    <section class="hero-3d-stage" id="hero-stage">
+      <!-- Three.js Canvas Container -->
+      <div id="webgl-canvas-container"></div>
+
+      <!-- Hero Overlaid Narrative Left -->
+      <div class="hero-content-left">
+        <div class="badge-limited">
+          <span class="badge-dot"></span>
+          LIMITED EDITION • 500 FLACONS
+        </div>
+
+        <h1 class="hero-title-main">ROJA DOVE</h1>
+        <div class="hero-subtitle-royale">ROYALE</div>
+
+        <p class="hero-description">
+          An ethereal convergence of frozen sapphire crystal and liquid 24-karat gold. 
+          Enshrined in hand-cut French crystal, Royale represents the absolute zenith of British Haute Parfumerie.
+        </p>
+
+        <div class="hero-specs-row">
+          <div class="spec-item">
+            <span class="spec-val">35%</span>
+            <span class="spec-lbl">Extrait Concentration</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-val">50 ML</span>
+            <span class="spec-lbl">Crystal Flacon</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-val">£795</span>
+            <span class="spec-lbl">Sovereign Edition</span>
+          </div>
+        </div>
+
+        <div class="hero-cta-group">
+          <button class="btn-primary-gold" id="hero-order-btn">
+            <span>SECURE FLACON</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+          
+          <button class="btn-spray-mist" id="trigger-spray-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+            <span>EXPERIENCE MIST</span>
+          </button>
+
+          <button class="btn-spray-mist" id="toggle-exploded-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 3 21 3 21 9"/>
+              <polyline points="9 21 3 21 3 15"/>
+              <line x1="21" y1="3" x2="14" y2="10"/>
+              <line x1="3" y1="21" x2="10" y2="14"/>
+            </svg>
+            <span id="exploded-label">EXPLODED VIEW</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Drag Orbit Hint -->
+      <div class="drag-hint-pill">
+        <span class="drag-icon-wave">⟲</span>
+        <span>DRAG TO ROTATE 360° • SCROLL TO EXPLORE</span>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         OLFACTORY PYRAMID SECTION WITH DEDICATED 3D BOTTLE STAGE POCKET
+         ==================================================================== -->
+    <section id="olfactory-section">
+      <div class="olfactory-showcase-grid">
+        <!-- Left Column: Concise, elegant note phases -->
+        <div class="olfactory-content-col">
+          <span class="section-label">Aromatic Architecture</span>
+          <h2 class="section-heading" style="text-align: left; font-size: 38px;">Olfactory Symphony</h2>
+          <p class="section-subtext" style="text-align: left; margin-bottom: 28px;">
+            Harmonized with 85 rare natural absolutes. Tap any note to experience its fragrant chord.
+          </p>
+
+          <div class="pyramid-stack">
+            <!-- Phase 1 -->
+            <div class="pyramid-phase-card">
+              <div class="phase-meta">
+                <span class="phase-badge">Phase I • Opening</span>
+                <span class="phase-duration">15 - 45 min</span>
+              </div>
+              <h3 class="phase-heading">Top Notes</h3>
+              <div class="notes-chips">
+                <span class="note-card" data-note="bergamot">Frozen Bergamot</span>
+                <span class="note-card" data-note="lemon">Amalfi Lemon</span>
+                <span class="note-card" data-note="marine">Crystalline Ozone</span>
+                <span class="note-card" data-note="cardamom">Green Cardamom</span>
+              </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="pyramid-phase-card">
+              <div class="phase-meta">
+                <span class="phase-badge">Phase II • The Soul</span>
+                <span class="phase-duration">2 - 6 hrs</span>
+              </div>
+              <h3 class="phase-heading">Heart Notes</h3>
+              <div class="notes-chips">
+                <span class="note-card" data-note="rose">Taif Mountain Rose</span>
+                <span class="note-card" data-note="lotus">Sacred Blue Lotus</span>
+                <span class="note-card" data-note="jasmine">Midnight Jasmine</span>
+                <span class="note-card" data-note="cistus">Golden Cistus</span>
+              </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="pyramid-phase-card">
+              <div class="phase-meta">
+                <span class="phase-badge">Phase III • Eternal Legacy</span>
+                <span class="phase-duration">18+ hrs</span>
+              </div>
+              <h3 class="phase-heading">Base Notes</h3>
+              <div class="notes-chips">
+                <span class="note-card" data-note="ambergris">20-Year Ambergris</span>
+                <span class="note-card" data-note="oud">Cambodian Royal Oud</span>
+                <span class="note-card" data-note="vanilla">Bourbon Vanilla</span>
+                <span class="note-card" data-note="cedar">Virginian Cedar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: RESERVED EMPTY STAGE FOR 3D PERFUME BOTTLE -->
+        <div class="scrolly-empty-stage" aria-hidden="true">
+          <!-- Intentionally left open for the 3D bottle to scroll into! -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         CRAFTSMANSHIP & ORIGINAL PHOTOGRAPHIC SHOWCASE
+         ==================================================================== -->
+    <section id="craftsmanship">
+      <div class="craftsmanship-showcase-grid">
+        <!-- Left Column: Craftsmanship Pillars + Archive Photo -->
+        <div class="craft-content-col">
+          <span class="section-label">Haute Horlogerie & Parfumerie</span>
+          <h2 class="section-heading" style="text-align: left; font-size: 38px;">Architectural Perfection</h2>
+          <p class="section-subtext" style="text-align: left; margin-bottom: 28px;">
+            Individually blown by master glassmakers in Normandy, hand-cut, and crowned with 24K gold fittings.
+          </p>
+
+          <div class="craft-details-col">
+            <div class="craft-pillar">
+              <div class="pillar-num">01</div>
+              <div class="pillar-content">
+                <h4>Solid Optical Crystal Base</h4>
+                <p>Lower 30% consists of solid monolithic optical glass, refracting sapphire and gold caustics.</p>
+              </div>
+            </div>
+
+            <div class="craft-pillar">
+              <div class="pillar-num">02</div>
+              <div class="pillar-content">
+                <h4>24K Gold Stepped Crown</h4>
+                <p>Solid brass stopper electroplated in 24K gold and set with precision-cut crystals.</p>
+              </div>
+            </div>
+
+            <div class="craft-pillar">
+              <div class="pillar-num">03</div>
+              <div class="craft-pillar-content">
+                <h4>Extrait Concentration (35%)</h4>
+                <p>Extremely rare 35% oil concentration lingering effortlessly for days on silk and cashmere.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Original Photo Showcase Card -->
+          <div class="image-showcase-wrapper">
+            <img 
+              src="./RDP-Royale_Social1_4-5.webp" 
+              alt="ROJA DOVE ROYALE Limited Edition Perfume suspended in crystalline sapphire rocks" 
+              class="product-hero-photo"
+              id="macro-product-image"
+            >
+            <div class="photo-overlay-badge">
+              <div class="photo-badge-title">OFFICIAL ARCHIVE CAPTURE</div>
+              <div class="photo-badge-sub">Limited Edition Flacon No. 001/500</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: DEDICATED EMPTY STAGE FOR 3D PERFUME BOTTLE -->
+        <div class="craft-3d-stage-pocket" aria-hidden="true">
+          <!-- Intentionally left empty for the 3D bottle to scroll into! -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         BESPOKE 3D ENGRAVING STUDIO WITH DEDICATED STAGE POCKET
+         ==================================================================== -->
+    <section id="engraving-studio">
+      <div class="engraving-showcase-grid">
+        <!-- Left Column: Luxury Engraving Controls Card -->
+        <div class="engraving-content-col">
+          <span class="section-label">Personalized Masterpiece</span>
+          <h2 class="section-heading" style="text-align: left; font-size: 38px;">Bespoke Flacon Engraving</h2>
+          <p class="section-subtext" style="text-align: left; margin-bottom: 24px;">
+            Inscribe your family crest or personal initials in 24K gold foil onto your flacon. 
+            The 3D flacon rotates 360° to showcase your bespoke inscription.
+          </p>
+
+          <form class="engraving-input-form" id="engraving-form" onsubmit="return false;">
+            <input 
+              type="text" 
+              id="engraving-text-input" 
+              class="engraving-input" 
+              placeholder="ENTER YOUR NAME OR INITIALS..." 
+              maxlength="26"
+              value="ROYALE PRIVÉ"
+            >
+            <button type="submit" class="engraving-submit-btn" id="apply-engraving-btn">
+              ENGRAVE 3D
+            </button>
+          </form>
+
+          <div style="margin-top: 18px; text-align: left;">
+            <span class="engraving-preview-badge" id="engraving-status-badge">
+              ACTIVE INSCRIPTION: “ROYALE PRIVÉ”
+            </span>
+          </div>
+        </div>
+
+        <!-- Right Column: DEDICATED EMPTY STAGE FOR 3D PERFUME BOTTLE -->
+        <div class="engraving-3d-stage-pocket" aria-hidden="true">
+          <!-- Intentionally left open for the 3D bottle to rotate 360° -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         MASTER PERFUMER QUOTE & REVIEWS
+         ==================================================================== -->
+    <section id="reviews-section">
+      <div class="perfumer-quote-box">
+        <div class="quote-mark">“</div>
+        <p class="quote-text">
+          I wanted to bottle the majesty of cold sapphire stars meeting the warm, sensual heart of molten gold. 
+          Royale is not merely a fragrance — it is a regal aura that announces your presence before you speak.
+        </p>
+        <div class="quote-author">— ROJA DOVE, Master Perfumer & Founder</div>
+      </div>
+
+      <div class="section-header" style="margin-bottom: 40px;">
+        <span class="section-label">Private Collector Critiques</span>
+        <h3 class="section-heading" style="font-size: 32px;">Acclaimed by Connoisseurs</h3>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            “The balance between the frosty sapphire opening and the decadent 20-year ambergris base is unmatched. 
+            A crowning achievement in modern luxury perfumery.”
+          </p>
+          <div class="reviewer-meta">
+            <span class="reviewer-name">Lord Alistair Sterling</span>
+            <span class="reviewer-badge">Verified Collector #042</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            “The flacon is a sculptural work of art. The weight of the optical crystal base and the solid 24K gold cap feel astonishing in the hand. Pure majesty.”
+          </p>
+          <div class="reviewer-meta">
+            <span class="reviewer-name">Countess Vivienne de Roche</span>
+            <span class="reviewer-badge">Verified Collector #118</span>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">
+            “Lasts over 24 hours on skin. The blue lotus note gives it an ethereal aquatic mystery that I have never encountered in 30 years of collecting.”
+          </p>
+          <div class="reviewer-meta">
+            <span class="reviewer-name">H.E. Tariq Al-Mansoor</span>
+            <span class="reviewer-badge">Verified Collector #205</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================================
+       VIP ORDERING DRAWER / MODAL
+       ==================================================================== -->
+  <div class="order-modal-backdrop" id="order-modal" aria-hidden="true" role="dialog">
+    <div class="order-modal-card">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">✕</button>
+
+      <div class="modal-header">
+        <h3 class="modal-title">VIP Allocation Request</h3>
+        <p class="modal-sub">Roja Dove Royale Limited Edition • 50ml Extrait</p>
+      </div>
+
+      <div class="certificate-authenticity">
+        <div>
+          <div style="font-size: 10px; color: #64748b; letter-spacing: 0.15em; text-transform: uppercase;">Allocated Flacon</div>
+          <div class="cert-num" id="cert-flacon-number">FLACON #187 OF 500</div>
+        </div>
+        <div class="cert-status">GUARANTEED ALLOCATION</div>
+      </div>
+
+      <form id="vip-order-form" onsubmit="return false;">
+        <div class="order-form-grid">
+          <div class="form-group">
+            <label class="form-label">Full Name & Title</label>
+            <input type="text" class="form-input" placeholder="e.g. Duke / Dr. / Ambassador..." required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Private VIP Email</label>
+            <input type="email" class="form-input" placeholder="concierge@private.domain" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Delivery Destination</label>
+            <input type="text" class="form-input" placeholder="Mayfair, London / Monaco / Dubai / Beverly Hills..." required>
+          </div>
+        </div>
+
+        <div class="order-pricing-row">
+          <div>
+            <div style="font-size: 11px; color: #64748b; letter-spacing: 0.1em; text-transform: uppercase;">Total Investment</div>
+            <div class="price-total">£795.00 <span style="font-size: 13px; color: #94a3b8; font-weight: normal;">GBP</span></div>
+          </div>
+          <div style="font-size: 11px; color: #a5b4fc; text-align: right;">
+            Includes Hand-Crafted Velvet Coffer<br>& Courier Delivery
+          </div>
+        </div>
+
+        <button type="submit" class="btn-complete-reservation" id="btn-submit-order">
+          CONFIRM PRIVATE ALLOCATION
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="luxury-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand-title" style="font-size: 18px;">ROJA DOVE</div>
+        <div class="brand-subtitle" style="font-size: 8px;">PERFUMERY • LONDON</div>
+        <p>
+          Renowned globally as the world's most luxurious perfume house. 
+          Founded by British Master Perfumer Roja Dove, MBE.
+        </p>
+      </div>
+
+      <div class="footer-nav-col">
+        <h5>Ateliers</h5>
+        <ul class="footer-links">
+          <li><a href="#">The Burlington Arcade, London</a></li>
+          <li><a href="#">Harrods Haute Parfumerie</a></li>
+          <li><a href="#">Place Vendôme, Paris</a></li>
+          <li><a href="#">Dubai Mall Fashion Avenue</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav-col">
+        <h5>Bespoke Services</h5>
+        <ul class="footer-links">
+          <li><a href="#">Private Perfume Commissions</a></li>
+          <li><a href="#">Precious Flacon Restoration</a></li>
+          <li><a href="#">Masterclass with Roja Dove</a></li>
+          <li><a href="#">VIP Vault Inquiries</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-nav-col">
+        <h5>Legal & Authenticity</h5>
+        <ul class="footer-links">
+          <li><a href="#">Certificate Verification</a></li>
+          <li><a href="#">Ethical Sourcing Standards</a></li>
+          <li><a href="#">Privacy Charter</a></li>
+          <li><a href="#">Terms of Concierge</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 ROJA DOVE PERFUMERY LTD. ALL RIGHTS RESERVED.</div>
+      <div>CRAFTED WITH THREE.JS & LUXURY SENSORY UI</div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Application -->
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
